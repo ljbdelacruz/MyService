@@ -14,6 +14,8 @@ db.sequelize = sequelize;
 
 //Models
 db.user = require('../model/users.model.js')(sequelize, Sequelize);
+db.userProfile=require('../model/security/UserProfile.model.js')(sequelize, Sequelize);
+
 db.role = require('../model/role.model.js')(sequelize, Sequelize);
 db.verificationcode=require('../model/verificationCode.model.js')(sequelize, Sequelize);
 db.accesstoken=require('../model/token.model.js')(sequelize, Sequelize);
