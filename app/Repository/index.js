@@ -4,9 +4,8 @@ const accessToken=require('./accesstoken.repo.js');
 const verificationCode=require('./verificationCode.repo.js');
 const category=require('./category.repo.js');
 const subCategory=require('./subCategory.repo.js');
-
-//
 const storeCategory=require('./MyService/storeCategory.repo.js');
+
 usersRepo();
 rolesRepo();
 accessToken();
@@ -15,7 +14,8 @@ verificationCode();
 category();
 subCategory();
 storeCategory();
-
+const security=require('./Security');
+const vstream=require('./vstream');
 module.exports={
   usersRepo:usersRepo,
   rolesRepo:rolesRepo,
@@ -23,7 +23,9 @@ module.exports={
   verificationCode:verificationCode,
   category:category,
   subCategory:subCategory,
-  storeCategory:storeCategory
+  storeCategory:storeCategory,
+  security:security,
+  vstream:vstream
 }
 
 

@@ -6,10 +6,10 @@ module.exports = (sequelize, Sequelize) => {
 	  },
 	  //uuid generated bcrypt
 	  token: {
-		type: Sequelize.STRING
+			type: Sequelize.STRING
 	  },
 	  authentication:{
-		type: Sequelize.STRING
+			type: Sequelize.STRING
 	  }
 	  //uuid generated bcrypt
 	});

@@ -6,10 +6,10 @@ module.exports = (sequelize, Sequelize) => {
 	  },
 	  //
 	  token: {
-		type: Sequelize.STRING
+			type: Sequelize.STRING
 	  },
 	  authentication_id: {
-		type: Sequelize.STRING
+			type: Sequelize.STRING
 	  },
 	  username: {
 	    type: Sequelize.STRING

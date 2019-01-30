@@ -2,6 +2,7 @@ module.exports = (sequelize, Sequelize) => {
 	const UserProfile = sequelize.define('userProfile', {
 	  id: {
         type: Sequelize.INTEGER,
+				autoIncrement: true,
         primaryKey: true
 	  },
 	  firstname: {
@@ -20,6 +21,6 @@ module.exports = (sequelize, Sequelize) => {
 		type: Sequelize.INTEGER
 	  }
 	});
-	
+
 	return UserProfile;
 }

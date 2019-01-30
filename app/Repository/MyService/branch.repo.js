@@ -29,7 +29,7 @@ BranchRepo.prototype.getByLocation=function(sid, long, lat, success, failed){
 
 
 BranchRepo.prototype.insert=function(cid, sid, priority){
-  StoreCategory.create({
+  Branches.create({
     categoryID:cid,
     storeID:sid,
     priority:priority
