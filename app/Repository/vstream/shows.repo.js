@@ -4,6 +4,15 @@ const Shows = db.shows;
 const Op = db.Sequelize.Op;
 function ShowsRepo(){
 }
+ShowsRepo.prototype.getLimit=function(limit, success, failed){
+  Shows.findAll({
+    limit: parseInt(limit)
+  }).then(branches=>{
+    success(branches);
+  }).catch(err=>{
+    failed(JSON.stringify({status:505, description: "Error -> "+err}))
+  })
+}
 ShowsRepo.prototype.getByTitle=function(title, limit, success, failed){
   Shows.findAll({
     where:{
@@ -18,6 +27,20 @@ ShowsRepo.prototype.getByTitle=function(title, limit, success, failed){
     failed(JSON.stringify({status:505, description: "Error -> "+err}))
   })
 }
+ShowsRepo.prototype.getByID=function(id, success, failed){
+  Shows.findOne({
+    where:{
+      id:id,
+    }
+  }).then(show=>{
+    success(show);
+  }).catch(err=>{
+    failed(JSON.stringify({status:505, description: "Error -> "+err}))
+  })
+}
+
+
+
 ShowsRepo.prototype.insert=function(title, description, profileImage, videoPromo, isSeries, success, failed){
   Shows.create({
     title:title,

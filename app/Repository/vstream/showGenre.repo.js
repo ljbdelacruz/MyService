@@ -1,13 +1,13 @@
 const db = require('../../config/dbconfig.js');
-const ShowsGenre = db.showsGenre;
+const ShowsGenre = db.showGenre;
 //Init Sequelize Operation
 const Op = db.Sequelize.Op;
-function ShowsRepo(){
+function ShowsGenreRepo(){
 }
-ShowsGenreRepo.prototype.getShowID=function(show_id, failed){
+ShowsGenreRepo.prototype.getShowID=function(shows_id, success, failed){
   ShowsGenre.findAll({
     where:{
-      show_id: show_id
+      shows_id: shows_id
     },
   }).then(showGenre=>{
     success(showGenre);
@@ -26,4 +26,4 @@ ShowsGenreRepo.prototype.insert=function(show_id, genre_id, success, failed){
   })
 }
 
-module.exports=ShowsRepo;
+module.exports=ShowsGenreRepo;

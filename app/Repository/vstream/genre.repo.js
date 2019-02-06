@@ -4,10 +4,19 @@ const Genre = db.genre;
 const Op = db.Sequelize.Op;
 function GenreRepo(){
 }
-GenreRepo.prototype.getByTitle=function(shows_id, success, failed){
+GenreRepo.prototype.getAll=function(limit, success, failed){
+  Genre.findAll({
+    limit: parseInt(limit)
+  }).then(genres=>{
+    success(genres);
+  }).catch(err=>{
+    failed(JSON.stringify({status:505, description: "Error -> "+err}))
+  })
+}
+GenreRepo.prototype.getByID=function(id, success, failed){
   Genre.findAll({
     where:{
-      shows_id:shows_id
+      id:id
     },
   }).then(videos=>{
     success(videos);

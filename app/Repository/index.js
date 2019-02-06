@@ -14,6 +14,7 @@ verificationCode();
 category();
 subCategory();
 storeCategory();
+const myService=require('./MyService');
 const security=require('./Security');
 const vstream=require('./vstream');
 module.exports={
@@ -25,7 +26,8 @@ module.exports={
   subCategory:subCategory,
   storeCategory:storeCategory,
   security:security,
-  vstream:vstream
+  vstream:vstream,
+  myService:myService
 }
 
 

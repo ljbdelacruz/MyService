@@ -1,7 +1,7 @@
 const showsRepo=require('./shows.repo.js');
 const videoURL=require('./videoURL.repo.js');
 const genre=require('./genre.repo.js');
-const showGenre=require('./genre.repo.js');
+const showGenre=require('./showGenre.repo.js');
 showsRepo();
 videoURL();
 genre();

@@ -19,7 +19,10 @@ module.exports = (sequelize, Sequelize) => {
 	  },
     previewImage: {
         type: Sequelize.STRING
-    }
+    },
+		ordinalOrder:{
+			type:Sequelize.INTEGER
+		}
 	});
 	return VideoURL;
 }

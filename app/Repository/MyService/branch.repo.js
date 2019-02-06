@@ -42,4 +42,4 @@ BranchRepo.prototype.insert=function(cid, sid, priority){
 
 
 
-module.exports=StoreCategoryRepo;
+module.exports=BranchRepo;

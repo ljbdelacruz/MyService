@@ -4,10 +4,11 @@ const UserCredentials = db.userCredentials;
 const Op = db.Sequelize.Op;
 function UserCredentialsRepo(){
 }
-UserCredentialsRepo.prototype.findByID=function(user_id, success, failed){
+UserCredentialsRepo.prototype.AuthPassword=function(user_id, password, success, failed){
   UserCredentials.findOne({
     where:{
-      user_id:user_id
+      user_id:user_id,
+      password:password
     }
   }).then(userCredentials => {
     if (!userCredentials){
@@ -19,6 +20,22 @@ UserCredentialsRepo.prototype.findByID=function(user_id, success, failed){
     failed(JSON.stringify({status:505, description: "Error -> "+err}))
   });
 }
+UserCredentialsRepo.prototype.FindByID=function(user_id, success, failed){
+  UserCredentials.findOne({
+    where:{
+      user_id:user_id,
+    }
+  }).then(userCredentials => {
+    if (!userCredentials){
+      failed(JSON.stringify({statusCode:404, description:"Not Found"}));
+    }else{
+      success(userCredentials);
+    }
+  }).catch(err => {
+    failed(JSON.stringify({status:505, description: "Error -> "+err}))
+  });
+}
+
 UserCredentialsRepo.prototype.insert=function(user_id, password, salt, type, success, failed){
   UserCredentials.create({
     user_id:user_id,

@@ -24,10 +24,10 @@ db.subcategory=require('../model/subCategory.model.js');
 // db.stores=require('../model/myservice/stores.model.js')(sequelize, Sequelize);
 // db.storeCategory=require('../model/myservice/storeCategory.model.js')(sequelize, Sequelize)
 // db.branches=require('../model/myservice/branches.model.js')(sequelize, Sequelize);
-
 //security
 db.userProfile=require('../model/security/UserProfile.model.js')(sequelize, Sequelize);
 db.userCredentials=require('../model/security/UserCredentials.model.js')(sequelize, Sequelize);
+db.userDevice=require('../model/security/UserDevices.model.js')(sequelize, Sequelize)
 db.verificationCode=require('../model/security/VerificationCodes.model.js')(sequelize, Sequelize)
 db.oAuthAccessToken=require('../model/security/OAuthAccessToken.model.js')(sequelize, Sequelize);
 db.oAuthClientDetails=require('../model/security/OAuthClientDetails.model.js')(sequelize, Sequelize);
