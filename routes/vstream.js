@@ -80,8 +80,6 @@ router.get('/show/video/list/:id', function(req, res, next){
     res.send(err);
   })
 })
-
-
 //showGenre
 router.get('/show/genre/:id', function(req, res, next){
   repo.vstream.showGenre.prototype.getShowID(req.params.id, function(resp){
@@ -97,4 +95,51 @@ router.post('/show/genre', function(req, res, next){
       res.send(err);
     })
 })
+
+//Discussion
+router.get('/show/discussions/all/:limit', function(req, res, next){
+  repo.vstream.discussions.getAll(req.params.body, function(result){
+      res.send(result);
+  }, function(err){
+      res.send(err);
+  })
+})
+router.get('/show/discussions/:showid', function(req, res, next){
+  //check header if the request of this resource is valid
+  repo.vstream.discussions.getShowID(req.params.showid, function(result){
+      res.send(result);
+  }, function(err){
+      res.send(err);
+  })
+})
+router.post('/show/discussions/insert', function(req, res, next){
+  repo.vstream.discussion.insert(req.body.title, req.body.description, req.body.showID, req.body.createdByUserID, req.body.createdAt, req.body.updatedAt,
+    function(result){
+      res.send(result)
+    }, function(error){
+      res.send(error);
+    })
+})
+//discussionreplies
+router.get('/show/discussions/replies/all/:limit', function(req, res, next){
+  repo.vstream.discussionReplies.getAll(req.params.limit, function(result){
+    res.send(result);
+  }, function(error){
+    res.send(error);
+  })
+})
+router.get('/show/discussions/replies/:id', function(req, res, next){
+  repo.vstream.discussionReplies.getByID(req.params.id, function(result){
+    res.send(result);
+  }, function(error){
+    res.send(error);
+  })
+})
+router.post('/show/discussions/replies/insert', function(req, res, next){
+
+})
+
+//
+
+
 module.exports = router;

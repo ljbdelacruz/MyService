@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-	const Genre = sequelize.define('genre', {
+	const GenrePreference = sequelize.define('genrePreference', {
 	  id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -12,5 +12,5 @@ module.exports = (sequelize, Sequelize) => {
 	  	  type: Sequelize.INTEGER
 	  },
 	});
-	return Genre;
+	return GenrePreference;
 }

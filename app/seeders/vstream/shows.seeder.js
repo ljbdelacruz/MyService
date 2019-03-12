@@ -9,13 +9,13 @@ exports.seed = () => {
 	Shows.create({
 		title: "Boruto First Generation",
     description:"test 01",
-    profileImage: "Test 01",
+    profileImage: "https://www.gstatic.com/webp/gallery3/1.png",
     isSeries: 1
 	});
 	Shows.create({
 		title: "NarutoShippuden",
 		description:"test 02",
-		profileImage: "Test 02",
+		profileImage: "https://www.gstatic.com/webp/gallery3/1.png",
 		isSeries: 1
 	});
 	ShowGenre.create({
@@ -31,7 +31,7 @@ exports.seed = () => {
 		summary:'test01',
 		shows_id:1,
 		url:"testURL",
-		previewImage:"testImage",
+		previewImage:"https://www.gstatic.com/webp/gallery3/1.png",
 		ordinalOrder:1
 	})
 

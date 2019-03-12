@@ -4,7 +4,7 @@ const UserDevices = db.userDevice;
 const Op = db.Sequelize.Op;
 function UserDevicesRepo(){
 }
-UserDevicesRepo.prototype.findByEmail=function(user_id, success, failed){
+UserDevicesRepo.prototype.findByUserID=function(user_id, success, failed){
   UserDevices.findOne({
     where:{
       user_id:user_id

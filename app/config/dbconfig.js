@@ -34,13 +34,19 @@ db.oAuthClientDetails=require('../model/security/OAuthClientDetails.model.js')(s
 db.oAuthClientToken=require('../model/security/OAuthClientToken.model.js')(sequelize, Sequelize);
 db.oAuthCode=require('../model/security/OAuthCode.model.js')(sequelize, Sequelize);
 db.oAuthRefreshToken=require('../model/security/OAuthRefreshToken.model.js')(sequelize, Sequelize);
-//borutoStreamer
+//vstreamer
+//shows
 db.shows=require('../model/vstream/shows.model.js')(sequelize, Sequelize);
 db.videoURL=require('../model/vstream/videoURL.model.js')(sequelize, Sequelize);
+//genre
 db.genre=require('../model/vstream/genre.model.js')(sequelize, Sequelize);
 db.showGenre=require('../model/vstream/showGenre.model.js')(sequelize, Sequelize);
 db.showReview=require('../model/vstream/showreview.model.js')(sequelize, Sequelize);
-
+db.genre=require('../model/vstream/genre.model.js')(sequelize, Sequelize)
+db.genrePreference=require('../model/vstream/genrePreference.model.js')(sequelize, Sequelize)
+//discussion
+db.discussion=require('../model/vstream/discussions.model.js')(sequelize, Sequelize)
+db.discussionReplies=require('../model/vstream/discussionReplies.model.js')(sequelize, Sequelize)
 
 
 //Relationship ORM

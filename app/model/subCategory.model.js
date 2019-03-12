@@ -1,4 +1,4 @@
-module.exports = (sequelize, Sequelize) => {
+module.exports = (sequelize, Sequelize) =>{
 	const SubCategory = sequelize.define('subCategory', {
 	  id: {
         type: Sequelize.INTEGER,
